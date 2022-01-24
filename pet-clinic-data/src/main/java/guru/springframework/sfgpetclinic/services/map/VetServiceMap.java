@@ -35,7 +35,7 @@ public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetSe
 
     @Override
     public Vet save(Vet object) {
-        if(object != null) {
+        if(object == null) {
             return null;
         }
         if(object.getSpecialities().size() > 0) { // I think you can delete this row, because for each won't call a NullPointerException
