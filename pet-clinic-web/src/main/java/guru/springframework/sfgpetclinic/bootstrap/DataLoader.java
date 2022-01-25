@@ -1,10 +1,7 @@
 package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.*;
-import guru.springframework.sfgpetclinic.services.OwnerService;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
-import guru.springframework.sfgpetclinic.services.SpecialityService;
-import guru.springframework.sfgpetclinic.services.VetService;
+import guru.springframework.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,16 @@ public class DataLoader implements CommandLineRunner {//CommandLineRunner is a S
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
+    private final PetService petService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, SpecialityService specialityService, PetTypeService petTypeService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, SpecialityService specialityService, PetTypeService petTypeService, VisitService visitService, PetService petService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
+        this.petService = petService;
     }
 
     @Override
@@ -68,12 +69,18 @@ public class DataLoader implements CommandLineRunner {//CommandLineRunner is a S
 
         ownerService.save(owner1);
 
+
+
+
+
+
         Pet michealPet = new Pet();
         michealPet.setPetType(savedDog);
         michealPet.setOwner(owner1);
         michealPet.setBirthDate(LocalDate.now());
         michealPet.setName("Pungo");
         owner1.getPets().add(michealPet);
+        petService.save(michealPet);
 
 
         Owner owner2 = new Owner();
@@ -92,7 +99,16 @@ public class DataLoader implements CommandLineRunner {//CommandLineRunner is a S
         fionaCat.setPetType(cat);
         owner2.getPets().add(fionaCat);
 
+        petService.save(fionaCat);
         System.out.println("Loaded Owners....");
+
+
+        Visit catVisit = new Visit();
+
+        catVisit.setPet(fionaCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Cat visit");
+        visitService.save(catVisit);
 
         Vet vet1 = new Vet();
         //vet1.setId(1L);
@@ -110,5 +126,9 @@ public class DataLoader implements CommandLineRunner {//CommandLineRunner is a S
         vet2.getSpecialities().add(radiology);
         vetService.save(vet2);
         System.out.println("Loaded Vets....");
+
+
+
+
     }
 }
