@@ -17,13 +17,10 @@ public class OwnerSDJPAService implements OwnerService {
 
 
     private final OwnerRepository ownerRepository;
-    private final PetRepository petRepository;
-    private final PetTypeService petTypeService;
 
-    public OwnerSDJPAService(OwnerRepository ownerRepository, PetRepository petRepository, PetTypeService petTypeService) {
+    public OwnerSDJPAService(OwnerRepository ownerRepository) {
         this.ownerRepository = ownerRepository;
-        this.petRepository = petRepository;
-        this.petTypeService = petTypeService;
+
     }
 
     @Override

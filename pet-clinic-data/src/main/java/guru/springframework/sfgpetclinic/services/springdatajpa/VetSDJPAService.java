@@ -17,15 +17,10 @@ import java.util.Set;
 public class VetSDJPAService implements VetService {
 
 
-    private final OwnerRepository ownerRepository;
-    private final PetRepository petRepository;
-    private final PetTypeService petTypeService;
+
     private final VetRepository vetRepository;
 
-    public VetSDJPAService(OwnerRepository ownerRepository, PetRepository petRepository, PetTypeService petTypeService, VetRepository vetRepository) {
-        this.ownerRepository = ownerRepository;
-        this.petRepository = petRepository;
-        this.petTypeService = petTypeService;
+    public VetSDJPAService(VetRepository vetRepository) {
         this.vetRepository = vetRepository;
     }
 
