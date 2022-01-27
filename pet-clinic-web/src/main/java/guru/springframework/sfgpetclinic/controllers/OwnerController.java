@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/owners")//thi is a prefixed for others paths
 @Controller
+
 public class OwnerController {
 
     private final OwnerService ownerService;
