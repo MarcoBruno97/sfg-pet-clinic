@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.HashSet;
@@ -18,20 +20,23 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)
+//@ExtendWith(MockitoExtension.class)
+
+
 class OwnerSDJPAServiceTest {
 
     public static final String LAST_NAME = "lName";
     @Mock
     OwnerRepository ownerRepository;
 
-    @InjectMocks
+    @InjectMocks//in service we are injecting ownerRepository mock
     OwnerSDJPAService service;
 
     Owner returnOwner;
 
     @BeforeEach
     void setUp() {
+        MockitoAnnotations.initMocks(this);
         returnOwner = Owner.builder().lastName(LAST_NAME).build();
 
     }

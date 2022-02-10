@@ -2,4 +2,5 @@
 /home/linux/Desktop/SFGPetClinic/sfg-pet-clinic/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/VetController.java
 /home/linux/Desktop/SFGPetClinic/sfg-pet-clinic/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/OwnerController.java
 /home/linux/Desktop/SFGPetClinic/sfg-pet-clinic/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/SfgPetClinicApplication.java
+/home/linux/Desktop/SFGPetClinic/sfg-pet-clinic/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/PetController.java
 /home/linux/Desktop/SFGPetClinic/sfg-pet-clinic/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/bootstrap/DataLoader.java

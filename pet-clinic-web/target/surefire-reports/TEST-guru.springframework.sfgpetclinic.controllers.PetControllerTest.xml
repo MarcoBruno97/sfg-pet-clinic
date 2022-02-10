@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="guru.springframework.sfgpetclinic.SfgPetClinicApplicationTests" time="8.035" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="guru.springframework.sfgpetclinic.controllers.PetControllerTest" time="0.179" tests="1" errors="1" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -58,5 +58,15 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="contextLoads" classname="guru.springframework.sfgpetclinic.SfgPetClinicApplicationTests" time="0.092"/>
+  <testcase name="newPet" classname="guru.springframework.sfgpetclinic.controllers.PetControllerTest" time="0.171">
+    <error message="Request processing failed; nested exception is java.lang.NullPointerException" type="org.springframework.web.util.NestedServletException">org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
+	at guru.springframework.sfgpetclinic.controllers.PetControllerTest.newPet(PetControllerTest.java:37)
+Caused by: java.lang.NullPointerException
+	at guru.springframework.sfgpetclinic.controllers.PetControllerTest.newPet(PetControllerTest.java:37)
+</error>
+    <system-out><![CDATA[2022-02-03 15:24:30.655  INFO 32240 --- [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2022-02-03 15:24:30.656  INFO 32240 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-02-03 15:24:30.659  INFO 32240 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+]]></system-out>
+  </testcase>
 </testsuite>

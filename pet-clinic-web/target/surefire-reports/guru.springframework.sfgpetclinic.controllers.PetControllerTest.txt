@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: guru.springframework.sfgpetclinic.controllers.PetControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.179 s <<< FAILURE! - in guru.springframework.sfgpetclinic.controllers.PetControllerTest
+newPet  Time elapsed: 0.171 s  <<< ERROR!
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
+	at guru.springframework.sfgpetclinic.controllers.PetControllerTest.newPet(PetControllerTest.java:37)
+Caused by: java.lang.NullPointerException
+	at guru.springframework.sfgpetclinic.controllers.PetControllerTest.newPet(PetControllerTest.java:37)
+
